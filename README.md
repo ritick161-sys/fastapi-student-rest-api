@@ -1,17 +1,21 @@
 # Task Manager REST API (FastAPI + SQLite)
 
-A documented RESTful API built with **FastAPI** and **SQLite** as part of **Module 05: Python Application Development**. It provides full CRUD functionality with Pydantic request/response validation, API key authentication, and automated endpoint tests.
+A documented RESTful API built with **FastAPI** and **SQLite** for **Module 05: Python Application Development**. It implements structured CRUD endpoints, parameterized SQLite storage, Pydantic schema validation, API Key header authentication, and automated endpoint tests.
 
-## Features
+## Key Features
 
-- **RESTful Routing:** Structured `POST`, `GET`, `PUT`, and `DELETE` endpoints with appropriate HTTP status codes (`201`, `200`, `204`, `401`, `404`).
-- **SQLite Persistence:** Local SQLite database (`tasks.db`) managed via context-safe connections and parameterized SQL queries.
-- **Schema Validation:** Automatic payload validation and serialization using Pydantic models (`TaskCreate`, `TaskUpdate`, `TaskOut`).
-- **API Key Authentication:** Protected endpoints requiring a valid `X-API-Key` header.
-- **Interactive API Docs & Testing:** Auto-generated Swagger UI at `/docs` and automated unit/integration tests with `pytest` and `TestClient`.
+- **FastAPI Routing & OpenAPI Docs:** Clean REST endpoints (`GET`, `POST`, `PUT`, `DELETE`) with interactive Swagger UI at `/docs`.
+- **SQLite Persistence:** Local relational storage (`tasks.db`) using context-safe connections and parameterized SQL queries.
+- **Schema Validation:** Request and response validation powered by Pydantic models (`TaskCreate`, `TaskUpdate`, `TaskOut`).
+- **API Key Authentication:** Protected task routes verified via the `X-API-Key` HTTP header.
+- **Automated Testing:** Full CRUD, validation, and authorization test suite using `pytest` and FastAPI `TestClient`.
 
-## Setup & Running Locally
+## Project Structure
 
-1. **Install dependencies**
-   ```bash
-   pip install -r requirements.txt
+```text
+python-task-manager-api/
+├── main.py            # FastAPI application, SQLite logic, schemas, and auth
+├── test_main.py       # Automated pytest endpoint tests
+├── requirements.txt   # Project dependencies
+├── .gitignore         # Ignored virtual environment and database files
+└── README.md          # Setup and API documentation
