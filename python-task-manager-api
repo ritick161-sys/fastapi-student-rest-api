@@ -1,0 +1,6 @@
+python-task-manager-api/
+├── main.py
+├── test_main.py
+├── requirements.txt
+├── .gitignore
+└── README.md
